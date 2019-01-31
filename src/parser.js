@@ -278,13 +278,6 @@ function parseProject(project) {
 }
 
 export default {
-  parseFile(filePath) {
-    return new Promise((resolve) => {
-      const data = fs.readFileSync(filePath);
-      const target = xml2jsparser.parseStringSync(data);
-      return resolve(parseProject(target.AfterEffectsProject));
-    });
-  },
   parseFileSync(filePath) {
     const data = fs.readFileSync(filePath);
     const target = xml2jsparser.parseStringSync(data);
